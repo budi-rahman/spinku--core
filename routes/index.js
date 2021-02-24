@@ -7,6 +7,10 @@ const terminalRouter = require('./terminal')
 const login = require('./login')
 const {isLogin} = require('../middlewares/role')
 
+router.get('/', (req, res) => {
+    res.send('Hi There')
+})
+
 
 router.use('/users', isLogin, userRouter)
 router.use('/terminals', isLogin, terminalRouter)
